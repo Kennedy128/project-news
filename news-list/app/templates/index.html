@@ -1,0 +1,47 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro %}
+
+
+<!-- Styles block -->
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+
+
+
+<!-- Content block-->
+{% block content %}
+<div class= "row"> 
+    <div class = "col-md-3">
+<h2>General News Sources</h2>
+{{ macro.displayNewsSources(general)}}
+</div>
+</div>
+
+<div class= "row"> 
+<div class = "col-md-3">
+<h2>Business News Sources</h2>
+{{ macro.displayNewsSources(business)}}
+</div>
+</div>
+
+<div class= "row"> 
+<div class = "col-md-3">
+<h2>Technology News Sources</h2>
+{{ macro.displayNewsSources(technology)}}
+</div>
+</div>
+
+<div class= "row"> 
+<div class = "col-md-3">
+<h2>Entertainment News Sources</h2>
+{{ macro.displaySourceList}}
+</div>
+</div>
+
+<h2>Sports News Sources</h2>
+{{ macro.displaySourceList}}
+
+</div>
+{% endblock %}
